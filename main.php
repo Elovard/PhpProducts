@@ -1,0 +1,17 @@
+<?php
+include "database.php";
+
+$name = $_POST['name'];
+$category= $_POST['category'];
+$price = $_POST['price'];
+$get_id = $_GET['id'];
+
+if (isset ($_POST['add'])) {
+    $sql = ("INSERT INTO products.products (name, category, price) VALUES (?, ?, ?)");
+    $query = $pdo->prepare($sql);
+    $query->execute([$name, $category, $price]);
+
+    if ($query) {
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+    }
+}
