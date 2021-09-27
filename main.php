@@ -1,12 +1,14 @@
 <?php
-include "database.php";
+require_once "database.php";
 
-$name = $_POST['name'];
-$category= $_POST['category'];
-$price = $_POST['price'];
-$get_id = $_GET['id'];
+$name = $_POST["name"];
+$category= $_POST["category"];
+$price = $_POST["price"];
+$get_id = $_GET["id"];
 
-if (isset ($_POST['add'])) {
+
+
+if (isset ($_POST["submit"])) {
     $sql = ("INSERT INTO products.products (name, category, price) VALUES (?, ?, ?)");
     $query = $pdo->prepare($sql);
     $query->execute([$name, $category, $price]);
