@@ -25,19 +25,20 @@ require 'main.php';
                     <th>PRICE</th>
                     <th>ACTION</th>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <?php foreach ($result as $value) { ?>
+                  <tr>
+                    <td><?=$value['id'] ?></td>
+                    <td><?=$value['name'] ?></td>
+                    <td><?=$value['category'] ?></td>
+                    <td><?=$value['price'] ?></td>
                     <td>
-                        <a href="" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editModal"><i
+                        <a href="?edit=<?=$value['id'] ?>" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editModal"><i
                                     class="fa fa-edit"></i></a>
-                        <a href="?delete=" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal"><i
+                        <a href="?delete=<?=$value['id'] ?>" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal"><i
                                     class="fa fa-trash"></i></a>
 
                     </td>
-                </tr>
+                </tr> <?php } ?>
                 </thead>
             </table>
         </div>
