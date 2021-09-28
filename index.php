@@ -32,7 +32,7 @@ require 'main.php';
                     <td><?=$value['category'] ?></td>
                     <td><?=$value['price'] ?></td>
                     <td>
-                        <a href="?edit=<?=$value['id'] ?>" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editModal"><i
+                        <a href="?edit=<?=$value['id'] ?>" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editModal<?=$value['id'] ?>"><i
                                     class="fa fa-edit"></i></a>
                         <a href="?delete=<?=$value['id'] ?>" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal<?=$value['id'] ?>"><i
                                     class="fa fa-trash"></i></a>
@@ -45,7 +45,7 @@ require 'main.php';
         </div>
     </div>
 </div>
-<!-- Modal -->
+
 <div class="modal fade" tabindex="-1" role="dialog" id="Modal">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content shadow">
