@@ -1,9 +1,9 @@
 <?php
 
 $host = 'localhost';
-$db = 'products';
+$db = 'test_schema';
 $user = 'root';
-$password = '21132113Gg';
+$password = '';
 
 try {
     $pdo = new PDO("mysql:host=$host; dbname=$db", $user, $password);
