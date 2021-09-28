@@ -9,7 +9,7 @@ $get_id = $_GET["id"];
 
 
 if (isset ($_POST["submit"])) {
-    $sql = ("INSERT INTO test_schema.products (name, category, price) VALUES (?, ?, ?)");
+    $sql = ("INSERT INTO products (name, category, price) VALUES (?, ?, ?)");
     $query = $pdo->prepare($sql);
     $query->execute([$name, $category, $price]);
 
@@ -17,3 +17,7 @@ if (isset ($_POST["submit"])) {
         header("Location: " . $_SERVER['HTTP_REFERER']);
     }
 }
+
+$sql = $pdo->prepare("SELECT * FROM `products`");
+$sql->execute();
+$result = $sql->fetchAll();
