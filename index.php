@@ -34,8 +34,9 @@ require 'main.php';
                     <td>
                         <a href="?edit=<?=$value['id'] ?>" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editModal"><i
                                     class="fa fa-edit"></i></a>
-                        <a href="?delete=<?=$value['id'] ?>" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal"><i
+                        <a href="?delete=<?=$value['id'] ?>" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal<?=$value['id'] ?>"><i
                                     class="fa fa-trash"></i></a>
+                        <?php require 'modal-option.php'; ?>
 
                     </td>
                 </tr> <?php } ?>
